@@ -1047,7 +1047,7 @@ def run_folding_on_context(
 
         scores_out_path = output_dir.joinpath(f"scores.model_idx_{idx}.npz")
 
-        np.savez(scores_out_path, **get_scores(ranking_outputs))
+        np.savez(scores_out_path, **get_scores(ranking_outputs), pae=pae_scores[idx], pde=pde_scores[idx], plddt=plddt_scores[idx])
 
     return StructureCandidates(
         cif_paths=cif_paths,
